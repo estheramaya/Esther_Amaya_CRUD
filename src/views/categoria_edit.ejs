@@ -1,0 +1,27 @@
+<% include partials/_headercat %>
+
+<div class="container mt-5">
+  <div class="row">
+    <h1 style="text-align: center;">ACTUALIZAR CATEGORIA</h1>
+    <hr></hr>
+    <div class="col-md-5 offset-md-3">
+     
+        
+        <form action="/categorias/updatem/<%= data.id %>" method="POST">
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="text" name="categoria" value="<%= data.categoria%>" placeholder="Categoria" class="form-control" autofocus>
+          </div>
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="text" name="descripcion" value="<%= data.descripcion%>" placeholder="Descripcion" class="form-control">
+          </div>
+
+          <button style="background-color: green; margin-left: 12%;" type="submit" class="btn btn-primary">
+            Actualizar Categoria
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<% include partials/_footer %>

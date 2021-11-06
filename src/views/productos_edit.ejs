@@ -1,0 +1,41 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+  <div class="row">
+    <h1 style="text-align: center;">ACTUALIZAR PRODUCTO</h1>
+    <hr></hr>
+    <div class="col-md-5 offset-md-3 ">
+      <div class="card-body">
+  
+        <form action="/update/<%= data.id %>" method="POST">
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="text" name="producto" value="<%= data.producto%>" placeholder="Nombre de Producto" class="form-control" autofocus>
+          </div>
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="number" name="precio" value="<%= data.precio%>" placeholder="Precio" class="form-control">
+          </div>
+          <div style="margin-left: 12%;" class="form-group">
+            <input type="number" name="disponibles" value="<%= data.disponibles%>" placeholder="Disponibles" class="form-control">
+          </div>
+          <div style="margin-left: 12%;" class="form-group">
+            <select name="categoria" class="form-control" id="categoria">
+              <option selected disabled>Categorias</option>
+              <% for (var i = 0; i < categorias.length; i++) { -%>
+                <option value="<%= categorias[i].id %>">
+                  <%= categorias[i].categoria %>
+                </option>
+              <% } -%>
+            </select>
+          </div>
+
+          <button style="background-color: green; margin-left: 12%;" type="submit" class="btn btn-primary">
+            Actualizar Producto
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% include partials/_footer %>
